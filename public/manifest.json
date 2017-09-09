@@ -1,0 +1,27 @@
+{
+    "manifest_version": 2,
+    "name": "Chrome工具箱",
+    "version": "1.0",
+    "description": "各类小功能，各类小插件，方便大家使用",
+    "icons": {
+        "100": "images/工具.png"
+    },
+    "browser_action": {
+        "default_icon": {
+            "30": "images/工具.png"
+        },
+        "default_title": "Chrome工具箱",
+        "default_popup": "popup.html"
+    },
+    "content_scripts": [
+        {
+            "matches": ["*://*/*"],
+            "js": ["lib/jquery-3.2.1.min.js"]
+        },
+        {
+            "matches": ["*://www.baidu.com/*"],
+            "js": ["js/ad.js"]
+        }
+    ],
+    "permissions": ["tabs"]
+}
